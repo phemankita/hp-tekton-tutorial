@@ -27,3 +27,8 @@ spec:
          value: $(params.repo-url)
        - name: revision
          value: $(params.branch-name)
+   - name: success-message
+     runAfter:
+       - fetch-repo
+     taskRef:
+       name: echo-git-clone-success

@@ -1,0 +1,3 @@
+https://github.com/tektoncd/pipeline.git
+
+release-v0.12.x
