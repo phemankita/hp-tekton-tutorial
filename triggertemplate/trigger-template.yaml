@@ -1,0 +1,25 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  labels:
+    app: hp-trigger-template
+  name: hp-trigger-template
+spec:
+  params:
+  - description: The git revision
+    name: gitrevision
+  - description: The git repository url
+    name: gitrepositoryurl
+  resourcetemplates:
+  - apiVersion: tekton.dev/v1beta1
+    kind: PipelineRun
+    metadata:
+      generateName: cat-branch-readme-
+    spec:
+      params:
+      - name: repo-url
+        value: $(tt.params.gitrepositoryurl)
+      - name: branch-name
+        value: $(tt.params.gitrevision)
+      pipelineRef:
+        name: cat-branch-readme
