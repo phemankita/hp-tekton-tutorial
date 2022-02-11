@@ -6,4 +6,4 @@
 
 ## 201
 
-test pipeline automation
+![tekton201](./images/tekton-201.drawio.png)

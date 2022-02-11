@@ -23,3 +23,6 @@ spec:
         value: $(tt.params.gitrevision)
       pipelineRef:
         name: cat-branch-readme
+      workspaces:
+        - name: shared-data
+          emptyDir: {}

@@ -10,6 +10,11 @@ spec:
    - name: branch-name
      type: string
      description: The git branch to clone.
+ workspaces:
+   - name: shared-data
+     description: |
+      This workspace will receive the cloned git repo and be passed
+       to the next Task for the repo's README.md file to be read.
  tasks:
    - name: fetch-repo
      taskRef:
